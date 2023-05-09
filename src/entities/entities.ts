@@ -36,8 +36,9 @@ export interface Station {
 export interface FakeData {
     temperature: number;
     humidity: number;
-    precipitations: number,
-    windDirection: WindDirection,
-    windForce: WindForce,
-    windSpeed: number,
+    precipitationsPerMinute: number;
+    acumulatedPrecipitations: number;
+    windDirection: WindDirection;
+    windForce: WindForce;
+    windSpeed: number;
 }
