@@ -7,5 +7,10 @@ export const Measurement = sequelize.define('measurement', {
     autoIncrement: true,
     primaryKey: true
   },
-  value: DataTypes.TEXT
+  measurementValue: DataTypes.TEXT
 })
+
+export type NewMeasurement = {
+  measurementValue: string,
+  sensorId: number
+}
