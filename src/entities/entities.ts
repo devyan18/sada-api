@@ -24,13 +24,8 @@ export enum WindDirection {
 
 export interface Station {
     id: number;
-    numberOfStation: number;
-    temperature: number;
-    humidity: number;
-    precipitations: number;
-    windSpeed: number;
-    windForce: WindForce;
-    windDirection: WindForce;
+    station_name: string;
+    station_location: string;
 }
 
 export interface FakeData {
