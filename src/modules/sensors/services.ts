@@ -1,4 +1,4 @@
-import { getMeasurementUnit } from '../units/services'
+import { getUnit } from '../units/services'
 import { getStation } from '../stations/services'
 import { NewSensor, Sensor } from './model'
 
@@ -42,7 +42,7 @@ export async function createSensor(props: NewSensor) {
 
     if (!station) return new Error('Station not found')
 
-    const unit = await getMeasurementUnit(measurementUnitId)
+    const unit = await getUnit(measurementUnitId)
 
     if (!unit) return new Error('Measurement unit not found')
 
