@@ -1,4 +1,4 @@
-import { getMeasurementUnit } from '../measurement-units/services'
+import { getMeasurementUnit } from '../units/services'
 import { getStation } from '../stations/services'
 import { NewSensor, Sensor } from './model'
 

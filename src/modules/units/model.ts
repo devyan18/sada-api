@@ -2,7 +2,7 @@ import { DataTypes } from 'sequelize'
 import { sequelize } from '../../config/database'
 import { Sensor } from '../sensors/model'
 
-export const MeasurementUnit = sequelize.define('measurement_units', {
+export const Unit = sequelize.define('units', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -11,10 +11,10 @@ export const MeasurementUnit = sequelize.define('measurement_units', {
   description: DataTypes.TEXT
 })
 
-export type NewMeasurementUnit = {
+export type NewUnit = {
   description: string
 }
 
-MeasurementUnit.hasMany(Sensor, {
-  foreignKey: 'measurementUnitId'
+Unit.hasMany(Sensor, {
+  foreignKey: 'unitId'
 })
