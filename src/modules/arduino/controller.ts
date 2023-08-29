@@ -31,7 +31,7 @@ export async function ctrlCreateRecord(req: Request, res: Response) {
 
     res.status(201).json(newRecord)
   } catch (error) {
-    console.log(error)
+    console.log(req.body)
     res.status(400).json({ error: 'Error to create record' })
   }
 }
