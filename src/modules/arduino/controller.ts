@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 import { createNewRecord, listRecords } from './services'
-import { NewRecord } from './model'
+import { NewRecord, RecordMongo } from './model'
 
 export async function ctrlListRecords(_req: Request, res: Response) {
   try {
@@ -47,6 +47,9 @@ export async function ctrlCreateRecord(req: Request, res: Response) {
     }
 
     const newRecord = await createNewRecord(newRecordData)
+    const newRecordMongo = new RecordMongo(newRecordData)
+
+    await newRecordMongo.save()
 
     if (!newRecord) {
       return res.status(400).json({ error: 'Error to create record' })
