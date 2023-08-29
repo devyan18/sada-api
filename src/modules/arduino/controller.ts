@@ -36,14 +36,14 @@ export async function ctrlCreateRecord(req: Request, res: Response) {
     // }
 
     const newRecordData: NewRecord = {
-      temperature: req.body.Temperatura,
-      humidity: req.body.Humedad,
-      precipitationsPerMinute: req.body.PrecipitacionM,
-      acumulatedPrecipitations: req.body.PrecipitacionA,
-      windDirection: req.body.DirViento,
-      windForce: req.body.FueViento,
-      windSpeed: req.body.VelViento,
-      height: req.body.Altitud
+      temperature: req.body.SADAUNO.Temperatura,
+      humidity: req.body.SADAUNO.Humedad,
+      precipitationsPerMinute: req.body.SADAUNO.PrecipitacionM,
+      acumulatedPrecipitations: req.body.SADAUNO.PrecipitacionA,
+      windDirection: req.body.SADAUNO.DirViento,
+      windForce: req.body.SADAUNO.FueViento,
+      windSpeed: req.body.SADAUNO.VelViento,
+      height: req.body.SADAUNO.Altitud
     }
 
     const newRecord = await createNewRecord(newRecordData)
