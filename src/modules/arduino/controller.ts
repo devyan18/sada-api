@@ -52,7 +52,7 @@ export async function ctrlCreateRecord(req: Request, res: Response) {
       return res.status(400).json({ error: 'Error to create record' })
     }
 
-    res.status(201).json(newRecord)
+    res.status(200).json(newRecord)
   } catch (error) {
     console.log(req.body)
     res.status(400).json({ error: 'Error to create record' })
