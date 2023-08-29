@@ -16,7 +16,7 @@ export const v1 = Router()
 // v1.use('/measurements', measurementRouter)
 
 v1.use('/fake', fakeRouter)
-v1.use('/arduino', recordRouter)
+v1.use('/records', recordRouter)
 
 v1.get('/', (_req, res) => {
   res.send('Hello World')
