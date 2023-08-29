@@ -55,39 +55,34 @@ export const Record = sequelize.define('records', {
 })
 
 const RecordSchmea = new Schema({
-  id: {
-    type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true
-  },
   temperature: {
-    type: DataTypes.FLOAT,
+    type: Number,
     allowNull: false
   },
   humidity: {
-    type: DataTypes.FLOAT,
+    type: Number,
     allowNull: false
   },
   precipitationsPerMinute: {
-    type: DataTypes.FLOAT,
+    type: Number,
     allowNull: false
   },
   acumulatedPrecipitations: {
-    type: DataTypes.FLOAT,
+    type: Number,
     allowNull: false
   },
   WindDirection: {
-    type: DataTypes.TEXT
+    type: String
   },
   WindForce: {
-    type: DataTypes.TEXT
+    type: String
   },
   windSpeed: {
-    type: DataTypes.FLOAT,
+    type: Number,
     allowNull: false
   },
   height: {
-    type: DataTypes.FLOAT,
+    type: Number,
     allowNull: false
   }
 }, {
