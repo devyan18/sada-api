@@ -13,14 +13,37 @@ export async function ctrlListRecords(_req: Request, res: Response) {
 
 export async function ctrlCreateRecord(req: Request, res: Response) {
   try {
+    //     SADAUNO: {
+
+    // Temperatura: 22.86000061,
+
+    // Humedad: 52.22460938,
+
+    // Presion: 1011.993347,
+
+    // Altitud: 10.4675312,
+
+    // DirViento: 'N',
+
+    // VelViento: 0,
+
+    // FueViento: 'Calmo',
+
+    // PrecipitacionM: 0,
+
+    // PrecipitacionA: 0.200000003
+
+    // }
+
     const newRecordData: NewRecord = {
-      temperature: req.body.temperature,
-      humidity: req.body.humidity,
-      precipitationsPerMinute: req.body.precipitationsPerMinute,
-      acumulatedPrecipitations: req.body.acumulatedPrecipitations,
-      windDirection: req.body.windDirection,
-      windForce: req.body.windForce,
-      windSpeed: req.body.windSpeed
+      temperature: req.body.Temperatura,
+      humidity: req.body.Humedad,
+      precipitationsPerMinute: req.body.PrecipitacionM,
+      acumulatedPrecipitations: req.body.PrecipitacionA,
+      windDirection: req.body.DirViento,
+      windForce: req.body.FueViento,
+      windSpeed: req.body.VelViento,
+      height: req.body.Altitud
     }
 
     const newRecord = await createNewRecord(newRecordData)

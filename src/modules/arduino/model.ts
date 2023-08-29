@@ -11,7 +11,8 @@ export type NewRecord = {
   windDirection: string,
   // windForce: WindForce,
   windForce: string,
-  windSpeed: number
+  windSpeed: number,
+  height: number
 }
 
 export const Record = sequelize.define('records', {
@@ -53,6 +54,10 @@ export const Record = sequelize.define('records', {
     type: DataTypes.TEXT
   },
   windSpeed: {
+    type: DataTypes.FLOAT,
+    allowNull: false
+  },
+  height: {
     type: DataTypes.FLOAT,
     allowNull: false
   }
