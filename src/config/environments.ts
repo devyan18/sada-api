@@ -6,6 +6,7 @@ export const environments = {
     PASSWORD: process.env.MYSQLPASSWORD || 'password',
     USER: process.env.MYSQLUSER || 'username',
     PORT: parseInt(process.env.MYSQLPORT || '0') || 3306,
-    DB: process.env.MYSQLDATABASE || 'database'
+    DB: process.env.MYSQLDATABASE || 'database',
+    MONGODB_URI: process.env.MONGODB_URI || 'mongodb://localhost:27017/database'
   }
 }

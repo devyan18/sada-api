@@ -1,7 +1,8 @@
 import { Sequelize } from 'sequelize'
 import { environments } from './environments'
+import { connect } from 'mongoose'
 
-const { URL } = environments.database
+const { URL, MONGODB_URI } = environments.database
 
 export const sequelize = new Sequelize(URL, {
   define: {
@@ -12,3 +13,12 @@ export const sequelize = new Sequelize(URL, {
     }
   }
 })
+
+export const connectMongo = async () => {
+  try {
+    const mongo = await connect(MONGODB_URI)
+    console.log('MongoDB is connected to', mongo.connection.name)
+  } catch (error) {
+    console.error(error)
+  }
+}
