@@ -88,5 +88,5 @@ const RecordSchmea = new Schema({
 }, {
   timestamps: true
 })
-
+// a
 export const RecordMongo = model('Record', RecordSchmea)
