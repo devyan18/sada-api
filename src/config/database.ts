@@ -2,9 +2,11 @@ import { Sequelize } from 'sequelize'
 import { environments } from './environments'
 import { connect } from 'mongoose'
 
-const { URL, MONGODB_URI } = environments.database
+const { URL, MONGODB_URI, DB, HOST, PASSWORD, USER } = environments.database
 
-export const sequelize = new Sequelize(URL, {
+export const sequelize = new Sequelize(DB, USER, PASSWORD, {
+  host: HOST,
+  dialect: "mysql",
   define: {
     hooks: {
       beforeSync: () => {

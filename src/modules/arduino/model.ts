@@ -1,11 +1,13 @@
 import { model, Schema } from 'mongoose'
 import { DataTypes } from 'sequelize'
 import { sequelize } from '../../config/database'
+import { Station } from '../stations/model'
 // import { WindDirection, WindForce } from '../../entities/entities'
 
 export type NewRecord = {
   temperature: number,
   humidity: number,
+  pressure: number,
   precipitationsPerMinute: number,
   acumulatedPrecipitations: number,
   // windDirection: WindDirection,
@@ -30,6 +32,10 @@ export const Record = sequelize.define('records', {
     type: DataTypes.FLOAT,
     allowNull: false
   },
+  pressure: {
+    type: DataTypes.FLOAT,
+    allowNull: false
+  },  
   precipitationsPerMinute: {
     type: DataTypes.FLOAT,
     allowNull: false
@@ -52,7 +58,16 @@ export const Record = sequelize.define('records', {
     type: DataTypes.FLOAT,
     allowNull: false
   }
+
+
 })
+
+Record.hasOne(Station, {
+  foreignKey: {
+    // name: 'myFooId'
+    name: "stationId"
+  }
+});
 
 const RecordSchmea = new Schema({
   temperature: {
@@ -60,6 +75,10 @@ const RecordSchmea = new Schema({
     allowNull: false
   },
   humidity: {
+    type: Number,
+    allowNull: false
+  },
+  pressure: {
     type: Number,
     allowNull: false
   },
