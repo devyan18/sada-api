@@ -62,13 +62,6 @@ export const Record = sequelize.define('records', {
 
 })
 
-Record.hasOne(Station, {
-  foreignKey: {
-    // name: 'myFooId'
-    name: "stationId"
-  }
-});
-
 const RecordSchmea = new Schema({
   temperature: {
     type: Number,
