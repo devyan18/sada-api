@@ -1,7 +1,6 @@
 import { model, Schema } from 'mongoose'
 import { DataTypes } from 'sequelize'
 import { sequelize } from '../../config/database'
-import { Station } from '../stations/model'
 // import { WindDirection, WindForce } from '../../entities/entities'
 
 export type NewRecord = {
