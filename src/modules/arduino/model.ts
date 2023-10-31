@@ -6,6 +6,7 @@ import { sequelize } from '../../config/database'
 export type NewRecord = {
   temperature: number,
   humidity: number,
+  pressure:number,
   precipitationsPerMinute: number,
   acumulatedPrecipitations: number,
   // windDirection: WindDirection,
@@ -30,6 +31,10 @@ export const Record = sequelize.define('records', {
     type: DataTypes.FLOAT,
     allowNull: false
   },
+  pressure: {
+    type: DataTypes.FLOAT,
+    allowNull: false
+  },  
   precipitationsPerMinute: {
     type: DataTypes.FLOAT,
     allowNull: false
@@ -60,6 +65,10 @@ const RecordSchmea = new Schema({
     allowNull: false
   },
   humidity: {
+    type: Number,
+    allowNull: false
+  },
+  pressure: {
     type: Number,
     allowNull: false
   },
