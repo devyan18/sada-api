@@ -36,6 +36,7 @@ export async function ctrlCreateRecord(req: Request, res: Response) {
     // }
 
     const newRecordData: NewRecord = {
+      station: req.body.SADAUNO.stationId,
       temperature: req.body.SADAUNO.Temperatura,
       humidity: req.body.SADAUNO.Humedad,
       pressure: req.body.SADAUNO.Presion,

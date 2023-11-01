@@ -4,6 +4,7 @@ import { sequelize } from '../../config/database'
 // import { WindDirection, WindForce } from '../../entities/entities'
 
 export type NewRecord = {
+  station: string,
   temperature: number,
   humidity: number,
   pressure: number,
@@ -62,6 +63,11 @@ export const Record = sequelize.define('records', {
 })
 
 const RecordSchmea = new Schema({
+  station: {
+    type: Schema.Types.ObjectId,
+    ref: 'Station', 
+    required: true
+  },
   temperature: {
     type: Number,
     allowNull: false
