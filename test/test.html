@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Stations</title>
+</head>
+<body>
+    <h1>Manage Stations</h1>
+
+    <section>
+        <h2>Create Station</h2>
+        <form id="createStationForm">
+            <label for="stationName">Station Name:</label>
+            <input type="text" id="stationName" required>
+            <br>
+            <label for="stationLocation">Station Location:</label>
+            <input type="text" id="stationLocation" required>
+            <br>
+            <button type="submit">Create Station</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Edit Station</h2>
+        <form id="editStationForm">
+            <label for="editStationId">Station ID:</label>
+            <input type="text" id="editStationId" required>
+            <br>
+            <label for="editStationLocation">New Location:</label>
+            <input type="text" id="editStationLocation" required>
+            <br>
+            <button type="submit">Edit Station</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Delete Station</h2>
+        <form id="deleteStationForm">
+            <label for="deleteStationId">Station ID:</label>
+            <input type="text" id="deleteStationId" required>
+            <br>
+            <button type="submit">Delete Station</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Add Random Record to Station</h2>
+        <form id="addRandomRecordForm">
+            <label for="stationIdForRecord">Station ID:</label>
+            <input type="text" id="stationIdForRecord" required>
+            <br>
+            <button type="submit">Add Random Record</button>
+        </form>
+    </section>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

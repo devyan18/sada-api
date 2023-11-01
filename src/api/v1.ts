@@ -7,6 +7,7 @@ import { Router } from 'express'
 
 import { router as fakeRouter } from './routes/fake.routes'
 import { recordRouter } from './routes/records.routes'
+import {stationRouter} from './routes/stations.routes'
 
 export const v1 = Router()
 
@@ -17,6 +18,7 @@ export const v1 = Router()
 
 v1.use('/fake', fakeRouter)
 v1.use('/records', recordRouter)
+v1.use('/stations', stationRouter);
 
 v1.get('/', (_req, res) => {
   res.send('Hello World')

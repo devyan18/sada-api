@@ -1,49 +1,55 @@
-import { NewStation, Station as StationModel } from './model'
+import { NewStation, StationMongo } from './model';
 
 export async function createStation(station: NewStation) {
   try {
-    return await StationModel.create(station)
+    const newStation = new StationMongo(station);
+    await newStation.save();
+    return newStation;
   } catch (error) {
-    return new Error('Unable to create station')
+    throw new Error('Unable to create station');
   }
 }
 
 export async function listStations() {
   try {
-    return await StationModel.findAll()
+    return await StationMongo.find();
   } catch (error) {
-    return new Error('Unable to list stations')
+    throw new Error('Unable to list stations');
   }
 }
 
-export async function getStation(id: number) {
+export async function getStation(id: string) {
   try {
-    return await StationModel.findByPk(id)
-  } catch (error) {
-    return new Error('Unable to get station')
-  }
-}
-
-export async function updateStation(id: number, station: NewStation) {
-  try {
-    const stationToUpdate = await StationModel.findByPk(id)
-    if (!stationToUpdate) {
-      return new Error('Station not found')
+    const station = await StationMongo.findById(id);
+    if (!station) {
+      throw new Error('Station not found');
     }
-    return await stationToUpdate.update(station)
+    return station;
   } catch (error) {
-    return new Error('Unable to update station')
+    throw new Error('Unable to get station');
   }
 }
 
-export async function deleteStation(id: number) {
+export async function updateStation(id: string, updatedData: Partial<NewStation>) {
   try {
-    const stationToDelete = await StationModel.findByPk(id)
-    if (!stationToDelete) {
-      return new Error('Station not found')
+    const station = await StationMongo.findByIdAndUpdate(id, updatedData, { new: true });
+    if (!station) {
+      throw new Error('Station not found');
     }
-    return await stationToDelete.destroy()
+    return station;
   } catch (error) {
-    return new Error('Unable to delete station')
+    throw new Error('Unable to update station');
+  }
+}
+
+export async function deleteStation(id: string) {
+  try {
+    const station = await StationMongo.findByIdAndDelete(id);
+    if (!station) {
+      throw new Error('Station not found');
+    }
+    return station;
+  } catch (error) {
+    throw new Error('Unable to delete station');
   }
 }
