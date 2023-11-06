@@ -4,7 +4,7 @@ import { NewRecord, RecordMongo } from './model'
 
 export async function ctrlListRecords(req: Request, res: Response) {
   try {
-    const stationId = req.query.stationId as string; // Cast to string for safety
+    const stationId = req.query.stationId as string;
     let records;
     if (stationId) {
       records = await listRecordsByStation(stationId);
