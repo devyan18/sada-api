@@ -80,10 +80,10 @@ const RecordSchmea = new Schema({
     type: Number,
     allowNull: false
   },
-  WindDirection: {
+  windDirection: {
     type: String
   },
-  WindForce: {
+  windForce: {
     type: String
   },
   windSpeed: {
