@@ -6,4 +6,5 @@ const recordRouter = Router()
 recordRouter.get('/', ctrlListRecords)
 recordRouter.post('/', ctrlCreateRecord)
 
+
 export { recordRouter }

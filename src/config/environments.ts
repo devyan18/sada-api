@@ -3,10 +3,10 @@ export const environments = {
   database: {
     HOST: process.env.MYSQLHOST || 'localhost',
     URL: process.env.MYSQL_URL || 'mysql://username:password@localhost:3306/database',
-    PASSWORD: process.env.MYSQLPASSWORD || 'password',
-    USER: process.env.MYSQLUSER || 'username',
+    PASSWORD: process.env.MYSQLPASSWORD || 'juanjo124',
+    USER: process.env.MYSQLUSER || 'root',
     PORT: parseInt(process.env.MYSQLPORT || '0') || 3306,
-    DB: process.env.MYSQLDATABASE || 'database',
-    MONGODB_URI: process.env.MONGODB_URI || 'mongodb://localhost:27017/database'
+    DB: process.env.MYSQLDATABASE || 'ClimaDBv1',
+    MONGODB_URI: process.env.MONGODB_URI || 'mongodb+srv://ipfrecaf:recaf12@cluster0.rhyuqe1.mongodb.net/Prueba'
   }
 }
